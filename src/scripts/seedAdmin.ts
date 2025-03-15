@@ -6,8 +6,8 @@ import { Admin } from "../entity/Admin";
 async function seedAdmin() {
   await AppDataSource.initialize();
 
-  const thisUser = "ecoadmin"
-  const thisPassword = "vxQ9ORifR3O7F1nhF56k4K5"
+  const thisUser = process.env.ADMIN_USER as string
+  const thisPassword = process.env.ADMIN_PASSWORD as string
 
   const adminRepo = AppDataSource.getRepository(Admin);
   const existingAdmin = await adminRepo.findOne({
