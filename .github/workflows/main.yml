@@ -21,7 +21,7 @@ jobs:
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd ~/project/RentalCoreAPI
+            cd ~/project/EcoLoopAPI
             git pull origin main
 
             echo "${{ secrets.ENV_DEV }}" > .env.dev
