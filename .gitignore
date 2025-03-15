@@ -1,0 +1,63 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log*
+yarn-error.log*
+bun.lockb
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Logs & Debugging
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+debug.log*
+.log
+.log.*
+stacktrace.log
+
+# Build & Output files
+dist/
+build/
+.out/
+.next/
+.vscode/
+.idea/
+*.DS_Store
+
+# Database files
+*.sqlite
+*.sqlite3
+*.db
+*.db-wal
+*.db-shm
+dump.rdb
+*.local
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Binaries
+*.exe
+*.out
+*.app
+*.dmg
+
+# Miscellaneous
+coverage/
+.nyc_output/
+.cache/
+tmp/
+*.swp
+*.swo
