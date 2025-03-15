@@ -7,6 +7,6 @@ services:
       dockerfile: Dockerfile
     platform: linux/amd64
     ports:
-      - "3200:3300"
+      - "5000:3200"
     environment:
       - NODE_ENV=production
