@@ -21,7 +21,7 @@ jobs:
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd ~/project/EcoLoopAPI
+            cd ~/project/eco-loop-api
             git pull origin main
 
             echo "${{ secrets.ENV_DEV }}" > .env.dev
