@@ -19,7 +19,7 @@ const allowedOrigins = [
   "http://localhost:3000", // Local machine
   "http://123.45.67.89:3000", // VPS IP address
   "http://example.com:3000", // VPS domain
-  "https://eco-loop.diyanpratama.com/",
+  "https://eco-loop.diyanpratama.com",
   "http://192.168.1.9:3000",
 ];
 
