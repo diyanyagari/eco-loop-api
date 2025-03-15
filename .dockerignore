@@ -1,0 +1,6 @@
+.git
+.git/hooks
+node_modules
+*.log
+.env
+.DS_Store

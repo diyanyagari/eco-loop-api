@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  app:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    platform: linux/amd64
+    ports:
+      - "8080:3200"
+    environment:
+      - NODE_ENV=production

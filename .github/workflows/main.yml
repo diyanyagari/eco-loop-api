@@ -1,0 +1,36 @@
+name: Deploy to VPS
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Deploy to Prod
+        if: ${{ github.ref_name == 'main' }}
+        uses: appleboy/ssh-action@v0.1.5
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd ~/project/RentalCoreAPI
+            git pull origin main
+
+            echo "${{ secrets.ENV_DEV }}" > .env.dev
+            echo "Contents of .env.dev (main):"
+
+            docker-compose down # Shutdown the running containers
+            docker-compose build --build-arg ENV_FILE=.env.dev
+            docker-compose up -d # Restart the containers in detached mode
+
+            # Check if Docker container is running on port 5432
+            sudo lsof -i :5432 || echo "No service is using port 5432"
+
