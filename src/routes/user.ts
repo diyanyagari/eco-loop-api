@@ -15,4 +15,5 @@ router.post("/users", authMiddleware, adminMiddleware, createUser);
 router.put("/users/:id", authMiddleware, adminMiddleware, updateUser);
 router.delete("/users/:id", authMiddleware, adminMiddleware, deleteUser);
 
+
 export default router;
